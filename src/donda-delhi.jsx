@@ -522,13 +522,14 @@ input,select,textarea,button{font-family:inherit}
 .live-dot{display:inline-flex;align-items:center;gap:4px;color:var(--green);font-size:10px}
 .live-dot::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 5px var(--green);animation:pulse 2s infinite}
 /* NAV */
-.nav{display:flex;background:var(--black);border-bottom:1px solid var(--border);flex-shrink:0;overflow-x:auto;scrollbar-width:none}
+.nav{display:flex;background:#111;border-bottom:1px solid rgba(200,184,154,.2);flex-shrink:0;overflow-x:auto;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
-.nb{flex:1;min-width:62px;padding:10px 3px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:color .2s;position:relative;text-align:center;white-space:nowrap}
-.nb.on{color:var(--accent)}
-.nb.on::after{content:'';position:absolute;bottom:0;left:15%;right:15%;height:1px;background:var(--accent)}
-.nb-ic{display:block;font-size:15px;margin-bottom:3px}
-.nb-badge{position:absolute;top:5px;right:calc(50% - 22px);background:var(--accent);color:var(--void);font-family:'Bebas Neue',sans-serif;font-size:9px;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.nb{flex:1;min-width:64px;padding:14px 4px 11px;background:none;border:none;color:#b0a898;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .18s;position:relative;text-align:center;white-space:nowrap}
+.nb:hover{color:#b0a898;background:rgba(200,184,154,.04)}
+.nb.on{color:var(--accent);background:rgba(200,184,154,.08)}
+.nb.on::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:2px;background:var(--accent);border-radius:1px}
+.nb-ic{display:block;font-size:19px;margin-bottom:5px;line-height:1}
+.nb-badge{position:absolute;top:8px;right:calc(50% - 26px);background:var(--accent);color:var(--void);font-family:'Bebas Neue',sans-serif;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 /* CONTENT */
 .content{flex:1;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
 .content.chatmode{overflow:hidden;display:flex;flex-direction:column}
@@ -744,6 +745,48 @@ input,select,textarea,button{font-family:inherit}
 .auth-note{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.06em;margin-top:14px;text-align:center;line-height:1.7}
 .spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(200,184,154,.3);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
 .flicker{animation:flicker 10s infinite}
+/* HOME CTA BLOCK */
+.home-cta-block{background:var(--black);border:1px solid var(--border2);padding:22px 20px;margin-top:6px;position:relative;overflow:hidden}
+.home-cta-block::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:scan 5s infinite}
+.home-cta-eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.28em;color:var(--dim);text-transform:uppercase;margin-bottom:10px}
+.home-cta-title{font-family:'Bebas Neue',sans-serif;font-size:40px;letter-spacing:.06em;line-height:1;color:var(--white);margin-bottom:12px}
+.home-cta-sub{font-family:'Space Mono',monospace;font-size:11px;color:var(--dim);line-height:1.65;margin-bottom:20px}
+.home-cta-btn{width:100%;background:var(--accent);color:var(--void);border:none;padding:15px;font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:.18em;cursor:pointer;margin-bottom:10px;display:block;transition:opacity .2s}
+.home-cta-btn:hover{opacity:.85}
+.home-cta-ghost{width:100%;background:none;border:1px solid var(--border);color:var(--dim);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;padding:12px;cursor:pointer;display:block;transition:all .2s;text-align:center}
+.home-cta-ghost:hover{border-color:var(--accent);color:var(--accent)}
+/* HOME HERO */
+.home-hero{background:var(--black);border:1px solid var(--border2);padding:20px 18px 18px;margin-bottom:14px;position:relative;overflow:hidden}
+.home-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:scan 4s infinite}
+.home-hero::after{content:'YE';position:absolute;right:-12px;bottom:-20px;font-family:'Bebas Neue',sans-serif;font-size:120px;color:rgba(200,184,154,.04);line-height:1;pointer-events:none;user-select:none}
+.home-hero-eye{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase;margin-bottom:10px}
+.home-hero-name{font-family:'Bebas Neue',sans-serif;font-size:50px;line-height:.95;letter-spacing:.04em;color:var(--white);margin-bottom:10px}
+.home-hero-date{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:.14em;margin-bottom:18px}
+.home-hero-chips{display:flex;align-items:center;gap:0}
+.home-chip{text-align:center;padding:0 14px}
+.home-chip:first-child{padding-left:0}
+.home-chip-val{display:block;font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--white);line-height:1;letter-spacing:.04em}
+.home-chip-lbl{display:block;font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:.12em;margin-top:3px;text-transform:uppercase}
+.home-chip-div{width:1px;height:32px;background:var(--border);flex-shrink:0}
+/* HOME TRIP BLOCK */
+.home-trip-block{background:rgba(200,184,154,.04);border:1px solid var(--border);padding:14px;margin-bottom:14px}
+.home-trip-label{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.home-trip-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid rgba(200,184,154,.06)}
+.home-trip-ic{font-size:18px;flex-shrink:0}
+/* HOME QUICK LINKS */
+.home-qlinks{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.home-qlink{display:flex;flex-direction:column;align-items:center;padding:12px 6px;background:var(--black);border:1px solid var(--border);text-decoration:none;transition:border-color .2s;gap:0}
+.home-qlink:hover{border-color:var(--border2)}
+/* HOME CTA BLOCK */
+.home-cta-block{background:var(--black);border:1px solid var(--border2);padding:22px 20px;margin-top:4px;position:relative;overflow:hidden}
+.home-cta-block::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:scan 5s infinite}
+.home-cta-eyebrow{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.24em;color:var(--dim);text-transform:uppercase;margin-bottom:10px}
+.home-cta-title{font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:.05em;line-height:.95;color:var(--white);margin-bottom:12px}
+.home-cta-sub{font-family:'Space Mono',monospace;font-size:11px;color:var(--dim);line-height:1.7;margin-bottom:20px}
+.home-cta-btn{width:100%;background:var(--accent);color:var(--void);border:none;padding:16px;font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.18em;cursor:pointer;margin-bottom:10px;display:block;transition:opacity .2s}
+.home-cta-btn:hover{opacity:.85}
+.home-cta-ghost{width:100%;background:none;border:1px solid rgba(200,184,154,.18);color:rgba(200,184,154,.6);font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;padding:13px;cursor:pointer;display:block;transition:all .2s;text-align:center}
+.home-cta-ghost:hover{border-color:var(--accent);color:var(--accent)}
 /* Google autocomplete dark */
 .pac-container{background:#0c0c0c!important;border:1px solid rgba(200,184,154,.2)!important;box-shadow:0 8px 30px rgba(0,0,0,.95)!important;font-family:'Barlow Condensed',sans-serif!important;margin-top:2px!important}
 .pac-item{background:#0c0c0c!important;color:var(--white)!important;border-top:1px solid rgba(200,184,154,.07)!important;padding:10px 14px!important;font-size:16px!important;cursor:pointer!important}
@@ -812,22 +855,35 @@ function AuthScreen({onLogin}){
 // ─────────────────────────────────────────────────────────────────────────────
 // HOME SCREEN
 // ─────────────────────────────────────────────────────────────────────────────
-function HomeScreen({user,cPlan,tPlan,food}){
+function HomeScreen({user,cPlan,tPlan,food,onNav}){
   const cd=useCountdown();
   const depLeft=cPlan?minsUntil(CONCERT.date,cPlan.deptTime):null;
   const gateLeft=minsUntil(CONCERT.date,CONCERT.gatesOpen);
   const urgency=!cPlan?null:gateLeft<0?"past":depLeft<0?"late":depLeft<60?"soon":"ok";
 
   return(
-    <div className="screen">
+    <div className="screen" style={{paddingBottom:24}}>
+
+      {/* USER BAR */}
       <div className="upill">
         <div className="upill-av">{user.avatar?<img src={user.avatar} alt=""/>:user.name[0].toUpperCase()}</div>
-        <div><div className="upill-name">{user.name}</div>{(cPlan||tPlan)&&<div className="upill-saved">✓ PLAN SAVED</div>}{user.provider==="guest"&&<div style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--dim)",marginTop:2}}>GUEST MODE</div>}</div>
-        {food?.length>0&&<span className="live-dot" style={{marginLeft:"auto"}}>LIVE</span>}
+        <div style={{flex:1}}>
+          <div className="upill-name">{user.name}</div>
+          <div style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:user.provider==="guest"?"var(--dim)":"var(--green)",marginTop:2}}>
+            {user.provider==="guest"?"GUEST MODE":`${(cPlan||tPlan)?"✓ PLAN SAVED · ":""}SIGNED IN`}
+          </div>
+        </div>
+        {food?.length>0&&<span className="live-dot">LIVE</span>}
       </div>
 
+      {/* URGENCY BANNERS */}
+      {urgency==="late"&&<div className="banner red">⚡ BEHIND SCHEDULE — LEAVE FOR VENUE NOW</div>}
+      {urgency==="soon"&&<div className="banner amber">⏱ DEPART IN {depLeft} MIN — GET READY NOW</div>}
+      {urgency==="ok"&&<div className="banner green">✓ ON SCHEDULE — DEPART {fmtTime(cPlan.deptTime)} VIA {cPlan.transport.toUpperCase()}</div>}
+
+      {/* COUNTDOWN */}
       <div className="cdb flicker">
-        <div className="cdb-lbl">{cd.past?"YE IS ON STAGE — LIVE NOW":cd.days>0?`${cd.days} DAYS UNTIL YE LIVE IN INDIA`:"HOURS UNTIL YE TAKES THE STAGE"}</div>
+        <div className="cdb-lbl">{cd.past?"YE IS ON STAGE":cd.days>0?"DAYS UNTIL YE LIVE IN INDIA":"HOURS UNTIL YE TAKES THE STAGE"}</div>
         {!cd.past?(
           <div className="cdb-nums">
             {cd.days>0&&<><div className="cdn"><span className="cdn-d">{String(cd.days).padStart(2,"0")}</span><span className="cdn-u">DAYS</span></div><span className="cdn-sep">:</span></>}
@@ -837,98 +893,95 @@ function HomeScreen({user,cPlan,tPlan,food}){
             <span className="cdn-sep">:</span>
             <div className="cdn"><span className="cdn-d">{String(cd.s).padStart(2,"0")}</span><span className="cdn-u">SEC</span></div>
           </div>
-        ):<div style={{textAlign:"center",padding:"14px 0",fontFamily:"'Bebas Neue',sans-serif",fontSize:30,color:"var(--accent)",letterSpacing:".1em"}}>LIVE NOW ◉</div>}
+        ):<div style={{textAlign:"center",padding:"14px 0",fontFamily:"'Bebas Neue',sans-serif",fontSize:36,color:"var(--accent)",letterSpacing:".12em",animation:"pulse 1.5s infinite"}}>◉ LIVE NOW</div>}
       </div>
 
-      {urgency==="late"&&<div className="banner red">⚡ BEHIND DEPARTURE PLAN — LEAVE NOW</div>}
-      {urgency==="soon"&&<div className="banner amber">⚠ DEPART IN {depLeft} MIN — GET READY NOW</div>}
-      {urgency==="ok"&&<div className="banner green">✓ ON SCHEDULE — DEPART AT {fmtTime(cPlan.deptTime)}</div>}
-
-      <div className="eic">
-        <div className="eic-ey">CONFIRMED — DISTRICT BY ZOMATO</div>
-        <div className="eic-name"><span className="glitch" data-text="YE LIVE IN INDIA">YE LIVE IN INDIA</span></div>
-        <div style={{fontFamily:"'Space Mono',monospace",fontSize:15,color:"var(--dim)",marginTop:3}}>{CONCERT.venueFull}</div>
-        <div className="eic-org">{CONCERT.organisers}</div>
-        <div className="chips">
-          <div className="chip"><div className="chip-l">DATE</div><div className="chip-v" style={{fontSize:16}}>29 MAR</div></div>
-          <div className="chip"><div className="chip-l">DAY</div><div className="chip-v" style={{fontSize:16}}>SUN</div></div>
-          <div className="chip"><div className="chip-l">GATES</div><div className="chip-v">{fmtTime(CONCERT.gatesOpen)}</div></div>
-          <div className="chip"><div className="chip-l">SHOW</div><div className="chip-v">{fmtTime(CONCERT.showStart)}</div></div>
-          <div className="chip"><div className="chip-l">END~</div><div className="chip-v" style={{fontSize:16}}>{fmtTime(CONCERT.showEnd)}</div></div>
+      {/* EVENT HERO CARD */}
+      <div className="home-hero">
+        <div className="home-hero-eye">CONFIRMED · JAWAHARLAL NEHRU STADIUM · NEW DELHI</div>
+        <div className="home-hero-name flicker">
+          <span className="glitch" data-text="YE LIVE">YE LIVE</span><br/>
+          <span className="glitch" data-text="IN INDIA">IN INDIA</span>
+        </div>
+        <div className="home-hero-date">Sunday, 29 March 2026</div>
+        <div className="home-hero-chips">
+          <div className="home-chip"><span className="home-chip-val">5 PM</span><span className="home-chip-lbl">GATES</span></div>
+          <div className="home-chip-div"/>
+          <div className="home-chip"><span className="home-chip-val">8 PM</span><span className="home-chip-lbl">SHOW</span></div>
+          <div className="home-chip-div"/>
+          <div className="home-chip"><span className="home-chip-val">~10:30</span><span className="home-chip-lbl">END</span></div>
+          <div className="home-chip-div"/>
+          <div className="home-chip"><span className="home-chip-val">5 MIN</span><span className="home-chip-lbl">METRO</span></div>
         </div>
       </div>
 
+      {/* DEPART BLOCK — shown only when plan exists */}
       {cPlan&&(
         <div className="dep-hero">
           <div>
-            <div style={{fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--dim)",letterSpacing:".22em",marginBottom:3}}>CONCERT DEPART</div>
+            <div style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:"var(--dim)",letterSpacing:".2em",marginBottom:4,textTransform:"uppercase"}}>Your Depart Time</div>
             <div className="dep-time">{fmtTime(cPlan.deptTime)}</div>
+            {cPlan.hotelPlace&&<div style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--dim)",marginTop:3}}>from {cPlan.hotelPlace.name}</div>}
           </div>
           <div className="dep-right">
-            <div className="dep-via">via {cPlan.transport}</div>
-            <div className="dep-eta">{cPlan.etaMins?`📡 ${cPlan.travel} min (live)`:`~${cPlan.travel} min est.`}</div>
-            {cPlan.hotelPlace&&<div style={{fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--dim)",marginTop:3}}>{cPlan.hotelPlace.name}</div>}
+            <div style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--dim)",marginBottom:4}}>via {cPlan.transport}</div>
+            <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:22,color:"var(--white)"}}>{cPlan.etaMins?`📡 ${cPlan.travel} MIN LIVE`:`~${cPlan.travel} MIN`}</div>
+            <div style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:"var(--dim)",marginTop:3}}>to JLN Stadium</div>
           </div>
         </div>
       )}
 
+      {/* MULTI-DAY TRIP OVERVIEW */}
       {tPlan&&tPlan.days.length>1&&(
-        <div style={{marginBottom:12}}>
-          <div className="lbl">YOUR DELHI TRIP — {tPlan.days.length} DAYS</div>
+        <div className="home-trip-block">
+          <div className="home-trip-label">YOUR DELHI TRIP — {tPlan.days.length} DAYS</div>
           {tPlan.days.map((d,i)=>(
-            <div key={i} style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderBottom:"1px solid var(--border)"}}>
-              <span style={{fontSize:16}}>{d.type==="concert"?"🎤":"🗺️"}</span>
-              <div>
-                <div style={{fontFamily:"'Barlow Condensed',sans-serif",fontSize:17,fontWeight:600}}>{d.label}</div>
-                <div style={{fontFamily:"'Space Mono',monospace",fontSize:15,color:"var(--dim)",marginTop:1}}>{fmtDate(d.date)}</div>
+            <div key={i} className="home-trip-row">
+              <span className="home-trip-ic">{d.type==="concert"?"🎤":"🗺️"}</span>
+              <div style={{flex:1}}>
+                <div style={{fontFamily:"'Barlow Condensed',sans-serif",fontSize:16,fontWeight:600,color:d.type==="concert"?"var(--accent)":"var(--white)"}}>{d.label}</div>
+                <div style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--dim)",marginTop:2}}>{fmtDate(d.date)}</div>
               </div>
-              {d.type==="concert"&&<span style={{marginLeft:"auto",fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--accent)"}}>SHOW DAY</span>}
+              {d.type==="concert"&&<span style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:"var(--accent)",border:"1px solid rgba(200,184,154,.2)",padding:"3px 7px"}}>SHOW</span>}
             </div>
           ))}
-          {tPlan.depPoint&&<div className="banner blue" style={{marginTop:8,marginBottom:0}}>🛫 Leaving Delhi: {fmtTime(tPlan.leaveHotelTime)} → {tPlan.depLabel?.split("—")[0]?.trim()}</div>}
+          {tPlan.depPoint&&<div style={{marginTop:10,fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--blue)",background:"rgba(96,165,250,.07)",border:"1px solid rgba(96,165,250,.18)",padding:"8px 12px"}}>🛫 Leave hotel {fmtTime(tPlan.leaveHotelTime)} → {tPlan.depLabel?.split("—")[0]?.trim()}</div>}
         </div>
       )}
 
-      <div style={{marginBottom:14}}>
+      {/* VENUE MAP */}
+      <div style={{marginBottom:16}}>
         <div className="lbl">VENUE MAP</div>
         <div className="map-wrap">
-          <iframe
-            title="JLN Stadium"
-            src={`https://www.google.com/maps/embed/v1/place?key=${GOOGLE_API_KEY}&q=Jawaharlal+Nehru+Stadium+New+Delhi&zoom=15`}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-          <a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${CONCERT.venueLat},${CONCERT.venueLng}&travelmode=transit`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="map-open-btn"
-          >GET DIRECTIONS →</a>
+          <iframe title="JLN Stadium" src={`https://www.google.com/maps/embed/v1/place?key=${GOOGLE_API_KEY}&q=Jawaharlal+Nehru+Stadium+New+Delhi&zoom=15`} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"/>
+          <a href={`https://www.google.com/maps/dir/?api=1&destination=${CONCERT.venueLat},${CONCERT.venueLng}&travelmode=transit`} target="_blank" rel="noopener noreferrer" className="map-open-btn">DIRECTIONS →</a>
         </div>
       </div>
 
-      <div style={{marginBottom:14}}>
-        <div className="lbl">NAVIGATION</div>
-        {[
-          {ic:"🗺️",t:"DIRECTIONS TO VENUE",s:"JLN Stadium — live traffic route",href:`https://www.google.com/maps/dir/?api=1&destination=${CONCERT.venueLat},${CONCERT.venueLng}&travelmode=transit`},
-          {ic:"🚇",t:"JLN STADIUM METRO STATION",s:"Violet Line — 5 min walk to venue",href:"https://www.google.com/maps/search/JLN+Stadium+Metro+Station+New+Delhi"},
-          {ic:"📱",t:"BUY TICKETS — DISTRICT BY ZOMATO",s:"district.in · Non-refundable · No re-entry",href:CONCERT.ticketUrl},
-          {ic:"🍽️",t:"FOOD NEAR VENUE",s:"Live restaurants near JLN Stadium",href:`https://www.google.com/maps/search/restaurant/@${CONCERT.venueLat},${CONCERT.venueLng},15z`},
-          {ic:"🏧",t:"NEARBY ATM",s:"Withdraw before entering — venue ATMs run dry",href:`https://www.google.com/maps/search/atm/@${CONCERT.venueLat},${CONCERT.venueLng},15z`},
-        ].map((b,i)=>(
-          <a key={i} href={b.href} target="_blank" rel="noopener noreferrer" className="mlink">
-            <span className="ml-ic">{b.ic}</span>
-            <div><div className="ml-t">{b.t}</div><div className="ml-s">{b.s}</div></div>
-            <span className="ml-arr">→</span>
-          </a>
-        ))}
+      {/* QUICK LINKS */}
+      <div style={{marginBottom:16}}>
+        <div className="lbl">QUICK LINKS</div>
+        <div className="home-qlinks">
+          {[
+            {ic:"🗺️",t:"Directions",href:`https://www.google.com/maps/dir/?api=1&destination=${CONCERT.venueLat},${CONCERT.venueLng}&travelmode=transit`},
+            {ic:"🚇",t:"Metro",href:"https://www.google.com/maps/search/JLN+Stadium+Metro+Station+New+Delhi"},
+            {ic:"🍽️",t:"Food",href:`https://www.google.com/maps/search/restaurant/@${CONCERT.venueLat},${CONCERT.venueLng},15z`},
+            {ic:"🏧",t:"ATM",href:`https://www.google.com/maps/search/atm/@${CONCERT.venueLat},${CONCERT.venueLng},15z`},
+            {ic:"📱",t:"Tickets",href:CONCERT.ticketUrl},
+          ].map((b,i)=>(
+            <a key={i} href={b.href} target="_blank" rel="noopener noreferrer" className="home-qlink">
+              <span style={{fontSize:22}}>{b.ic}</span>
+              <span style={{fontFamily:"'Space Mono',monospace",fontSize:10,color:"var(--dim)",marginTop:4,letterSpacing:".05em"}}>{b.t}</span>
+            </a>
+          ))}
+        </div>
       </div>
 
+      {/* LIVE FOOD */}
       {food?.length>0&&(
-        <div style={{marginBottom:12}}>
-          <div className="lbl">LIVE — FOOD NEAR VENUE</div>
-          {food.map((p,i)=>(
+        <div style={{marginBottom:16}}>
+          <div className="lbl">FOOD NEAR VENUE <span style={{color:"var(--green)",fontSize:10}}>● LIVE</span></div>
+          {food.slice(0,4).map((p,i)=>(
             <a key={i} href={`https://www.google.com/maps/place/?q=place_id:${p.placeId}`} target="_blank" rel="noopener noreferrer" className="pc">
               <span className="pc-ic">🍴</span>
               <div style={{flex:1}}><div className="pc-name">{p.name}</div><div className="pc-addr">{p.address}</div>{p.open===true&&<div className="pc-open">● OPEN NOW</div>}{p.open===false&&<div className="pc-closed">● CLOSED</div>}</div>
@@ -938,22 +991,21 @@ function HomeScreen({user,cPlan,tPlan,food}){
         </div>
       )}
 
-      <div style={{marginBottom:12}}>
-        <div className="lbl">TICKET TIERS — CONFIRMED</div>
-        {CONCERT.tickets.map((t,i)=>(
-          <div key={i} className="tier-row">
-            <div><div className="tier-name">{t.tier}</div><div className="tier-note">{t.note}</div></div>
-            <div className="tier-price">{t.price}</div>
-          </div>
-        ))}
-        <div style={{fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--dim)",marginTop:8,lineHeight:1.6}}>{CONCERT.ticketNote}</div>
-      </div>
-
-      <div>
-        <div className="lbl">VENUE RULES</div>
-        {["Gates open 17:00 — arrive early for merch + entry queues","Bags no larger than A4. Mandatory bag check at all gates.",`Prohibited: ${CONCERT.prohibited}`,"NO parking inside venue — Metro, cab or Park+Metro only","NO re-entry after you exit the stadium","Last metro from JLN Stadium station approx. 23:00",`Age limit: ${CONCERT.ageLimit}`,"Share live location with someone before entering"].map((t,i)=>(
-          <div key={i} className="sr"><span className="sr-n">{String(i+1).padStart(2,"0")}</span><span className="sr-t">{t}</span></div>
-        ))}
+      {/* CTA BUTTONS */}
+      <div className="home-cta-block">
+        <div className="home-cta-eyebrow">{cPlan?"YOUR PLAN IS READY":"NO PLAN YET"}</div>
+        <div className="home-cta-title">{cPlan?<>VIEW OR UPDATE<br/>YOUR ITINERARY</>:<>BUILD YOUR<br/>DELHI PLAN</>}</div>
+        <div className="home-cta-sub">
+          {cPlan
+            ? `Departing ${fmtTime(cPlan.deptTime)} via ${cPlan.transport} · ${cPlan.travel} min to venue`
+            : "Set arrival, hotel, transport & budget — get a minute-by-minute day plan."}
+        </div>
+        <button className="home-cta-btn" onClick={()=>onNav("plan")}>
+          {cPlan?"▶ VIEW MY PLAN":"▶ BUILD MY PLAN"}
+        </button>
+        <button className="home-cta-ghost" onClick={()=>onNav("about")}>
+          EVENT INFO, TICKETS & RULES →
+        </button>
       </div>
     </div>
   );
@@ -1407,12 +1459,109 @@ function Splash({onDone}){
 // ─────────────────────────────────────────────────────────────────────────────
 // ROOT
 // ─────────────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+// ABOUT SCREEN
+// ─────────────────────────────────────────────────────────────────────────────
+function AboutScreen(){
+  return(
+    <div className="screen">
+      <div className="lbl">ABOUT THE SHOW</div>
+
+      <div className="eic" style={{marginBottom:18}}>
+        <div className="eic-ey">CONFIRMED — DISTRICT BY ZOMATO</div>
+        <div className="eic-name"><span className="glitch" data-text="YE LIVE IN INDIA">YE LIVE IN INDIA</span></div>
+        <div style={{fontFamily:"'Space Mono',monospace",fontSize:12,color:"var(--dim)",marginTop:6,lineHeight:1.65}}>{CONCERT.venueFull}</div>
+        <div className="eic-org">{CONCERT.organisers}</div>
+      </div>
+
+      <div style={{marginBottom:20}}>
+        <div className="lbl">EVENT DETAILS</div>
+        {[
+          ["Date",        CONCERT.dateDisplay],
+          ["Gates Open",  fmtTime(CONCERT.gatesOpen)+" IST"],
+          ["Show Start",  fmtTime(CONCERT.showStart)+" IST"],
+          ["Est. End",    fmtTime(CONCERT.showEnd)+" IST (±30 min)"],
+          ["Venue",       CONCERT.venue],
+          ["Metro",       "JLN Stadium · Violet Line · 5 min walk"],
+          ["Ticketing",   "District by Zomato (district.in)"],
+          ["Age Limit",   CONCERT.ageLimit],
+          ["Re-entry",    "Not permitted once you exit"],
+          ["Parking",     "No venue parking — Metro or cab only"],
+          ["Organisers",  CONCERT.organisers],
+        ].map(([k,v],i)=>(
+          <div key={i} className="irow">
+            <div className="irowk">{k}</div>
+            <div className="irowv">{v}</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{marginBottom:20}}>
+        <div className="lbl">TICKET TIERS — CONFIRMED</div>
+        {CONCERT.tickets.map((t,i)=>(
+          <div key={i} className="tier-row">
+            <div><div className="tier-name">{t.tier}</div><div className="tier-note">{t.note}</div></div>
+            <div className="tier-price">{t.price}</div>
+          </div>
+        ))}
+        <div style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--dim)",marginTop:10,lineHeight:1.7}}>{CONCERT.ticketNote}</div>
+        <a href={CONCERT.ticketUrl} target="_blank" rel="noopener noreferrer" className="mlink" style={{marginTop:14}}>
+          <span className="ml-ic">📱</span>
+          <div><div className="ml-t">BUY TICKETS — DISTRICT BY ZOMATO</div><div className="ml-s">district.in · Official ticketing partner</div></div>
+          <span className="ml-arr">→</span>
+        </a>
+      </div>
+
+      <div style={{marginBottom:20}}>
+        <div className="lbl">EXPECTED SETLIST</div>
+        <div style={{display:"flex",flexWrap:"wrap",gap:7,marginBottom:8}}>
+          {CONCERT.setlist.map((s,i)=>(
+            <div key={i} style={{background:"rgba(200,184,154,.06)",border:"1px solid var(--border)",padding:"7px 12px",fontFamily:"'Barlow Condensed',sans-serif",fontSize:16,color:"var(--white)",letterSpacing:".03em"}}>{s}</div>
+          ))}
+        </div>
+        <div style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--dim)",lineHeight:1.65}}>Based on recent world tour setlists. Subject to change. Runtime: 2–2.5 hrs.</div>
+      </div>
+
+      <div style={{marginBottom:20}}>
+        <div className="lbl">VENUE RULES</div>
+        {[
+          ["🚪","Gates open at 5:00 PM IST — arrive early for merch queues and bag checks"],
+          ["👜","Bags no larger than A4 sheet — mandatory check at all gates"],
+          ["🚫","No: professional cameras, outside food/drinks, large bags, weapons, laser pointers"],
+          ["🚗","No parking inside venue — take Metro (JLN Stadium, Violet Line) or cab"],
+          ["🔄","No re-entry after you exit the stadium"],
+          ["🚇","Last metro from JLN Stadium station approx. 23:00"],
+          ["🔞",`Age limit: ${CONCERT.ageLimit}`],
+          ["📍","Share live location with someone before entering"],
+          ["🍺",CONCERT.insideFood],
+        ].map(([ic,t],i)=>(
+          <div key={i} style={{display:"flex",gap:12,padding:"11px 0",borderBottom:"1px solid var(--border)",alignItems:"flex-start"}}>
+            <span style={{fontSize:18,flexShrink:0}}>{ic}</span>
+            <span style={{fontSize:14,color:"var(--off)",lineHeight:1.6}}>{t}</span>
+          </div>
+        ))}
+      </div>
+
+      <div>
+        <div className="lbl">EMERGENCY CONTACTS</div>
+        {[["Delhi Police","100"],["Ambulance","108"],["PCR Van","112"],["Delhi Metro","155370"],["Tourist Help","1800111363"]].map(([l,n],i)=>(
+          <a key={i} href={`tel:${n}`} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"11px 0",borderBottom:"1px solid var(--border)",textDecoration:"none"}}>
+            <span style={{fontSize:15,color:"var(--white)"}}>{l}</span>
+            <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:22,color:"var(--accent)"}}>{n}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const TABS=[
   {id:"home",    label:"Home",    ic:"◈"},
   {id:"plan",    label:"Plan",    ic:"▦"},
   {id:"list",    label:"Checks",  ic:"☰"},
   {id:"copilot", label:"Copilot", ic:"◉"},
   {id:"notes",   label:"Notes",   ic:"▤"},
+  {id:"about",   label:"About",   ic:"ℹ"},
 ];
 
 export default function App(){
@@ -1490,17 +1639,18 @@ export default function App(){
             <button key={t.id} className={`nb${tab===t.id?" on":""}`} onClick={()=>setTab(t.id)}>
               {t.id==="list"&&clCount>0&&<span className="nb-badge">{clCount}</span>}
               <span className="nb-ic">{t.ic}</span>
-              {t.label}
+              <span className="nb-lbl">{t.label}</span>
             </button>
           ))}
         </div>
 
         <div className={`content${tab==="copilot"?" chatmode":""}`}>
-          {tab==="home"    &&<HomeScreen     user={user} cPlan={cPlan} tPlan={tPlan} food={food}/>}
+          {tab==="home"    &&<HomeScreen     user={user} cPlan={cPlan} tPlan={tPlan} food={food} onNav={setTab}/>}
           {tab==="plan"    &&<PlanScreen     cPlan={cPlan} tPlan={tPlan} onSave={savePlans} user={user}/>}
           {tab==="list"    &&<ChecklistScreen user={user} onSave={saveChecklist}/>}
           {tab==="copilot" &&<CopilotScreen  cPlan={cPlan} tPlan={tPlan} user={user} food={food} onSaveMsgs={saveMsgs}/>}
           {tab==="notes"   &&<NotesScreen    user={user} onSave={saveNotes}/>}
+          {tab==="about"   &&<AboutScreen/>}
         </div>
       </div>
     </>
