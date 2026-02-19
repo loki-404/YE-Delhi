@@ -10,7 +10,7 @@ const CONCERT = {
   name:        "YE LIVE IN INDIA",
   date:        "2026-03-29",
   dateDisplay: "Sunday, 29 March 2026",
-  gatesOpen:   "17:00",
+  gatesOpen:   "16:00",
   showStart:   "20:00",
   showEnd:     "22:30",
   venue:       "Jawaharlal Nehru Stadium",
@@ -949,7 +949,7 @@ function HomeScreen({user,cPlan,tPlan,food}){
 
       <div>
         <div className="lbl">VENUE RULES</div>
-        {["Gates open 17:00 — arrive early for merch + entry queues","Bags no larger than A4. Mandatory bag check at all gates.",`Prohibited: ${CONCERT.prohibited}`,"NO parking inside venue — Metro, cab or Park+Metro only","NO re-entry after you exit the stadium","Last metro from JLN Stadium station approx. 23:00",`Age limit: ${CONCERT.ageLimit}`,"Share live location with someone before entering"].map((t,i)=>(
+        {["Gates open 16:00 — arrive early for merch + entry queues","Bags no larger than A4. Mandatory bag check at all gates.",`Prohibited: ${CONCERT.prohibited}`,"NO parking inside venue — Metro, cab or Park+Metro only","NO re-entry after you exit the stadium","Last metro from JLN Stadium station approx. 23:00",`Age limit: ${CONCERT.ageLimit}`,"Share live location with someone before entering"].map((t,i)=>(
           <div key={i} className="sr"><span className="sr-n">{String(i+1).padStart(2,"0")}</span><span className="sr-t">{t}</span></div>
         ))}
       </div>
