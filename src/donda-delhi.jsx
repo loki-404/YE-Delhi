@@ -10,7 +10,7 @@ const CONCERT = {
   name:        "YE LIVE IN INDIA",
   date:        "2026-03-29",
   dateDisplay: "Sunday, 29 March 2026",
-  gatesOpen:   "16:00",
+  gatesOpen:   "17:00",
   showStart:   "20:00",
   showEnd:     "22:30",
   venue:       "Jawaharlal Nehru Stadium",
@@ -496,7 +496,7 @@ const CSS=`
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--void:#040404;--black:#090909;--panel:#0e0e0e;--white:#e8e4dc;--off:#b0aca4;--dim:#636058;--accent:#c8b89a;--green:#4ade80;--red:#f87171;--amber:#fbbf24;--blue:#60a5fa;--border:rgba(200,184,154,.1);--border2:rgba(200,184,154,.22);}
 html,body{height:100%;overflow:hidden}
-body{background:var(--void);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:16px;-webkit-font-smoothing:antialiased}
+body{background:var(--void);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:18px;-webkit-font-smoothing:antialiased}
 input,select,textarea,button{font-family:inherit}
 .grain{position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .app{height:100dvh;display:flex;flex-direction:column;max-width:430px;margin:0 auto;overflow:hidden;background:var(--void)}
@@ -514,21 +514,21 @@ input,select,textarea,button{font-family:inherit}
 @keyframes flicker{0%,95%,100%{opacity:1}96%{opacity:.75}98%{opacity:1}}
 @keyframes spin{to{transform:rotate(360deg)}}
 /* HEADER */
-.hdr{padding:12px 18px 10px;border-bottom:1px solid var(--border);flex-shrink:0}
-.hdr-ey{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.32em;color:var(--dim);text-transform:uppercase;margin-bottom:1px}
-.hdr-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.07em;line-height:1;display:flex;align-items:center;gap:5px}
+.hdr{padding:14px 18px 12px;border-bottom:1px solid var(--border);flex-shrink:0}
+.hdr-ey{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:2px}
+.hdr-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.07em;line-height:1;display:flex;align-items:center;gap:5px}
 .hdr-slash{color:var(--accent)}
-.hdr-sub{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:.1em;color:var(--dim);margin-top:3px;display:flex;align-items:center;gap:10px}
-.live-dot{display:inline-flex;align-items:center;gap:3px;color:var(--green);font-size:7px}
-.live-dot::before{content:'';width:4px;height:4px;background:var(--green);border-radius:50%;box-shadow:0 0 4px var(--green);animation:pulse 2s infinite}
+.hdr-sub{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;color:var(--dim);margin-top:4px;display:flex;align-items:center;gap:10px}
+.live-dot{display:inline-flex;align-items:center;gap:4px;color:var(--green);font-size:10px}
+.live-dot::before{content:'';width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 5px var(--green);animation:pulse 2s infinite}
 /* NAV */
 .nav{display:flex;background:var(--black);border-bottom:1px solid var(--border);flex-shrink:0;overflow-x:auto;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
-.nb{flex:1;min-width:55px;padding:8px 3px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:6.5px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:color .2s;position:relative;text-align:center;white-space:nowrap}
+.nb{flex:1;min-width:62px;padding:10px 3px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:color .2s;position:relative;text-align:center;white-space:nowrap}
 .nb.on{color:var(--accent)}
 .nb.on::after{content:'';position:absolute;bottom:0;left:15%;right:15%;height:1px;background:var(--accent)}
-.nb-ic{display:block;font-size:12px;margin-bottom:2px}
-.nb-badge{position:absolute;top:4px;right:calc(50% - 22px);background:var(--accent);color:var(--void);font-family:'Bebas Neue',sans-serif;font-size:8px;width:13px;height:13px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.nb-ic{display:block;font-size:15px;margin-bottom:3px}
+.nb-badge{position:absolute;top:5px;right:calc(50% - 22px);background:var(--accent);color:var(--void);font-family:'Bebas Neue',sans-serif;font-size:9px;width:15px;height:15px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 /* CONTENT */
 .content{flex:1;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
 .content.chatmode{overflow:hidden;display:flex;flex-direction:column}
@@ -536,213 +536,217 @@ input,select,textarea,button{font-family:inherit}
 ::-webkit-scrollbar{width:2px}
 ::-webkit-scrollbar-thumb{background:var(--border)}
 /* SHARED */
-.lbl{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.24em;color:var(--dim);text-transform:uppercase;margin-bottom:9px;padding-bottom:5px;border-bottom:1px solid var(--border)}
-.upill{display:flex;align-items:center;gap:7px;background:rgba(200,184,154,.05);border:1px solid var(--border);padding:6px 10px;margin-bottom:12px}
-.upill-av{width:24px;height:24px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:12px;color:var(--void)}
+.lbl{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.upill{display:flex;align-items:center;gap:9px;background:rgba(200,184,154,.05);border:1px solid var(--border);padding:8px 12px;margin-bottom:14px}
+.upill-av{width:30px;height:30px;border-radius:50%;overflow:hidden;flex-shrink:0;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:14px;color:var(--void)}
 .upill-av img{width:100%;height:100%;object-fit:cover}
-.upill-name{font-family:'Space Mono',monospace;font-size:8px;color:var(--white)}
-.upill-saved{font-family:'Space Mono',monospace;font-size:7px;color:var(--green);margin-top:1px}
+.upill-name{font-family:'Space Mono',monospace;font-size:11px;color:var(--white)}
+.upill-saved{font-family:'Space Mono',monospace;font-size:10px;color:var(--green);margin-top:2px}
 /* COUNTDOWN */
-.cdb{background:var(--black);border:1px solid var(--border);padding:16px;margin-bottom:12px;position:relative;overflow:hidden}
+.cdb{background:var(--black);border:1px solid var(--border);padding:18px;margin-bottom:14px;position:relative;overflow:hidden}
 .cdb::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:scan 4s infinite}
-.cdb-lbl{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:.28em;color:var(--accent);text-transform:uppercase;text-align:center;margin-bottom:9px}
-.cdb-nums{display:flex;gap:8px;align-items:flex-start;justify-content:center}
+.cdb-lbl{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;text-align:center;margin-bottom:12px}
+.cdb-nums{display:flex;gap:10px;align-items:flex-start;justify-content:center}
 .cdn{text-align:center}
-.cdn-d{font-family:'Bebas Neue',sans-serif;font-size:46px;line-height:1;color:var(--white);display:block;font-variant-numeric:tabular-nums}
-.cdn-u{font-family:'Space Mono',monospace;font-size:6.5px;color:var(--dim);letter-spacing:.18em;display:block;margin-top:2px}
-.cdn-sep{font-family:'Bebas Neue',sans-serif;font-size:34px;color:var(--accent);opacity:.4;animation:blink 1s infinite;margin-top:5px}
+.cdn-d{font-family:'Bebas Neue',sans-serif;font-size:54px;line-height:1;color:var(--white);display:block;font-variant-numeric:tabular-nums}
+.cdn-u{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:.14em;display:block;margin-top:3px}
+.cdn-sep{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--accent);opacity:.4;animation:blink 1s infinite;margin-top:6px}
 /* EVENT CARD */
-.eic{background:var(--black);border:1px solid var(--border);padding:14px;margin-bottom:12px}
-.eic-ey{font-family:'Space Mono',monospace;font-size:7px;color:var(--dim);letter-spacing:.22em;margin-bottom:4px}
-.eic-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.05em;margin-bottom:3px;line-height:1.1}
-.eic-org{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim);margin-top:4px;line-height:1.5}
-.chips{display:flex;gap:5px;margin-top:10px;flex-wrap:wrap}
-.chip{flex:1;min-width:52px;background:rgba(200,184,154,.05);border:1px solid var(--border);padding:7px 4px;text-align:center}
-.chip-l{font-family:'Space Mono',monospace;font-size:6px;color:var(--dim);letter-spacing:.12em}
-.chip-v{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--accent);line-height:1.1}
+.eic{background:var(--black);border:1px solid var(--border);padding:16px;margin-bottom:14px}
+.eic-ey{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.16em;margin-bottom:5px}
+.eic-name{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.05em;margin-bottom:4px;line-height:1.1}
+.eic-org{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:5px;line-height:1.6}
+.chips{display:flex;gap:5px;margin-top:12px;flex-wrap:wrap}
+.chip{flex:1;min-width:55px;background:rgba(200,184,154,.05);border:1px solid var(--border);padding:8px 4px;text-align:center}
+.chip-l{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);letter-spacing:.1em}
+.chip-v{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--accent);line-height:1.1}
 /* DEPART HERO */
-.dep-hero{background:var(--black);border:1px solid var(--border2);padding:14px;margin-bottom:12px;position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:center}
+.dep-hero{background:var(--black);border:1px solid var(--border2);padding:16px;margin-bottom:14px;position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:center}
 .dep-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:scan 4s infinite}
-.dep-time{font-family:'Bebas Neue',sans-serif;font-size:50px;color:var(--accent);line-height:1}
+.dep-time{font-family:'Bebas Neue',sans-serif;font-size:56px;color:var(--accent);line-height:1}
 .dep-right{text-align:right}
-.dep-via{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim)}
-.dep-eta{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:var(--white);margin-top:3px}
+.dep-via{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim)}
+.dep-eta{font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--white);margin-top:4px}
 /* BANNERS */
-.banner{padding:9px 12px;margin-bottom:12px;font-family:'Space Mono',monospace;font-size:8.5px;line-height:1.5}
+.banner{padding:11px 14px;margin-bottom:14px;font-family:'Space Mono',monospace;font-size:11px;line-height:1.6}
 .banner.red{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.3);color:var(--red)}
 .banner.amber{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);color:var(--amber)}
 .banner.green{background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.2);color:var(--green)}
 .banner.blue{background:rgba(96,165,250,.07);border:1px solid rgba(96,165,250,.25);color:var(--blue)}
+/* MAP EMBED */
+.map-wrap{margin-bottom:14px;position:relative;overflow:hidden;border:1px solid var(--border)}
+.map-wrap iframe{display:block;width:100%;height:220px;border:none;filter:grayscale(1) invert(1) contrast(.8)}
+.map-open-btn{position:absolute;bottom:10px;right:10px;background:var(--accent);color:var(--void);font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.1em;padding:6px 12px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
 /* MAP LINKS */
-.mlink{display:flex;align-items:center;gap:9px;background:var(--black);border:1px solid var(--border);color:var(--white);width:100%;padding:11px 12px;cursor:pointer;text-align:left;transition:border-color .2s;margin-bottom:7px;text-decoration:none}
+.mlink{display:flex;align-items:center;gap:10px;background:var(--black);border:1px solid var(--border);color:var(--white);width:100%;padding:13px 14px;cursor:pointer;text-align:left;transition:border-color .2s;margin-bottom:8px;text-decoration:none}
 .mlink:hover{border-color:var(--border2)}
-.ml-ic{font-size:16px}
-.ml-t{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.06em}
-.ml-s{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim);margin-top:1px}
-.ml-arr{color:var(--accent);font-size:12px;margin-left:auto}
+.ml-ic{font-size:18px}
+.ml-t{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.06em}
+.ml-s{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:2px}
+.ml-arr{color:var(--accent);font-size:14px;margin-left:auto}
 /* PLACE CARDS */
-.pc{display:flex;align-items:flex-start;gap:9px;background:var(--black);border:1px solid var(--border);padding:9px 11px;margin-bottom:6px;text-decoration:none;color:inherit;transition:border-color .2s}
+.pc{display:flex;align-items:flex-start;gap:10px;background:var(--black);border:1px solid var(--border);padding:11px 13px;margin-bottom:7px;text-decoration:none;color:inherit;transition:border-color .2s}
 .pc:hover{border-color:var(--border2)}
-.pc-ic{font-size:16px;flex-shrink:0;margin-top:1px}
-.pc-name{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;letter-spacing:.03em}
-.pc-addr{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim);margin-top:2px;line-height:1.4}
-.pc-rate{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--accent);margin-left:auto;flex-shrink:0}
-.pc-open{font-family:'Space Mono',monospace;font-size:7px;color:var(--green);margin-top:1px}
-.pc-closed{font-family:'Space Mono',monospace;font-size:7px;color:var(--red);margin-top:1px}
+.pc-ic{font-size:18px;flex-shrink:0;margin-top:1px}
+.pc-name{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:600;letter-spacing:.03em}
+.pc-addr{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:3px;line-height:1.45}
+.pc-rate{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--accent);margin-left:auto;flex-shrink:0}
+.pc-open{font-family:'Space Mono',monospace;font-size:10px;color:var(--green);margin-top:2px}
+.pc-closed{font-family:'Space Mono',monospace;font-size:10px;color:var(--red);margin-top:2px}
 /* TICKETS */
-.tier-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border)}
-.tier-name{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.05em}
-.tier-price{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--accent)}
-.tier-note{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim);margin-top:1px}
+.tier-row{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--border)}
+.tier-name{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:.05em}
+.tier-price{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--accent)}
+.tier-note{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:2px}
 /* FORMS */
-.fg{margin-bottom:13px}
-.fl{display:block;font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:.17em;color:var(--dim);text-transform:uppercase;margin-bottom:5px}
-.fi{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:15px;padding:9px 11px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.fg{margin-bottom:14px}
+.fl{display:block;font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;margin-bottom:6px}
+.fi{width:100%;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:17px;padding:11px 13px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
 .fi:focus{border-color:var(--accent)}
 .fi option{background:#0d0d0d}
 .fi::placeholder{color:var(--dim)}
-.fi-hint{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim);margin-top:3px;line-height:1.45}
-.fi-ok{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--green);margin-top:3px}
+.fi-hint{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:5px;line-height:1.55}
+.fi-ok{font-family:'Space Mono',monospace;font-size:10px;color:var(--green);margin-top:5px}
 /* ARRIVAL TABS */
-.at{display:flex;gap:2px;background:var(--black);border:1px solid var(--border);padding:3px;margin-bottom:10px}
-.atb{flex:1;padding:8px 3px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-align:center}
+.at{display:flex;gap:2px;background:var(--black);border:1px solid var(--border);padding:3px;margin-bottom:12px}
+.atb{flex:1;padding:10px 3px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-align:center}
 .atb.on{background:var(--accent);color:var(--void)}
-.atb-ic{display:block;font-size:14px;margin-bottom:2px}
+.atb-ic{display:block;font-size:16px;margin-bottom:3px}
 /* BUDGET */
-.bg{display:flex;gap:5px;margin-bottom:5px}
-.bo{flex:1;padding:9px 4px;background:var(--black);border:1px solid var(--border);color:var(--dim);font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.1em;cursor:pointer;transition:all .2s;text-align:center}
+.bg{display:flex;gap:5px;margin-bottom:6px}
+.bo{flex:1;padding:11px 4px;background:var(--black);border:1px solid var(--border);color:var(--dim);font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.1em;cursor:pointer;transition:all .2s;text-align:center}
 .bo.on{background:var(--accent);border-color:var(--accent);color:var(--void)}
-.bo-sub{font-family:'Space Mono',monospace;font-size:6px;display:block;margin-top:2px}
+.bo-sub{font-family:'Space Mono',monospace;font-size:8px;display:block;margin-top:3px}
 /* DAYS OPTION */
-.day-opt{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--black);border:1px solid var(--border);cursor:pointer;margin-bottom:5px;transition:all .2s}
+.day-opt{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--black);border:1px solid var(--border);cursor:pointer;margin-bottom:6px;transition:all .2s}
 .day-opt.on{border-color:var(--accent);background:rgba(200,184,154,.06)}
-.day-opt-ic{font-size:20px;flex-shrink:0}
-.day-opt-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em}
-.day-opt-desc{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim);margin-top:1px}
-.day-opt-ck{color:var(--accent);font-size:14px;margin-left:auto}
+.day-opt-ic{font-size:22px;flex-shrink:0}
+.day-opt-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em}
+.day-opt-desc{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:2px}
+.day-opt-ck{color:var(--accent);font-size:16px;margin-left:auto}
 /* SECTION BOX */
-.sbox{background:rgba(200,184,154,.04);border:1px solid var(--border);padding:12px;margin-bottom:13px}
-.sbox-label{font-family:'Space Mono',monospace;font-size:8px;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px}
+.sbox{background:rgba(200,184,154,.04);border:1px solid var(--border);padding:14px;margin-bottom:14px}
+.sbox-label{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
 .sbox.blue{background:rgba(96,165,250,.04);border-color:rgba(96,165,250,.2)}
 .sbox.blue .sbox-label{color:var(--blue)}
 /* ETA */
-.etab{display:flex;align-items:center;gap:9px;background:rgba(200,184,154,.05);border:1px solid var(--border2);padding:9px 12px;margin-bottom:12px}
-.etad{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.etab{display:flex;align-items:center;gap:10px;background:rgba(200,184,154,.05);border:1px solid var(--border2);padding:11px 14px;margin-bottom:14px}
+.etad{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .etad.live{background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2s infinite}
 .etad.load{background:var(--accent);animation:pulse .8s infinite}
 .etad.err{background:var(--dim)}
-.eta-t{font-family:'Space Mono',monospace;font-size:9.5px;color:var(--white)}
-.eta-s{font-size:7.5px;color:var(--dim);margin-top:1px}
+.eta-t{font-family:'Space Mono',monospace;font-size:11px;color:var(--white)}
+.eta-s{font-size:10px;color:var(--dim);margin-top:2px}
 /* BUTTONS */
-.btn{width:100%;background:var(--accent);color:var(--void);border:none;padding:13px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.15em;cursor:pointer;transition:opacity .2s;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:7px}
+.btn{width:100%;background:var(--accent);color:var(--void);border:none;padding:15px;font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.15em;cursor:pointer;transition:opacity .2s;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px}
 .btn:hover{opacity:.85}
 .btn:disabled{opacity:.35;cursor:not-allowed}
-.btn.ghost{background:none;border:1px solid var(--border);color:var(--dim);font-size:12px}
+.btn.ghost{background:none;border:1px solid var(--border);color:var(--dim);font-size:14px}
 .btn.ghost:hover{border-color:var(--accent);color:var(--accent)}
 /* DIRTY */
-.dirty{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.22);padding:8px 11px;margin-bottom:12px;font-family:'Space Mono',monospace;font-size:8px;color:var(--amber)}
+.dirty{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.22);padding:10px 13px;margin-bottom:14px;font-family:'Space Mono',monospace;font-size:10px;color:var(--amber)}
 /* DAY CARDS */
-.dcard{background:var(--black);border:1px solid var(--border);margin-bottom:8px;overflow:hidden}
-.dcard-hdr{padding:10px 13px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;cursor:pointer;transition:background .2s}
+.dcard{background:var(--black);border:1px solid var(--border);margin-bottom:10px;overflow:hidden}
+.dcard-hdr{padding:12px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .2s}
 .dcard-hdr:hover{background:rgba(200,184,154,.04)}
-.dcard-ic{font-size:18px}
-.dcard-title{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.06em;flex:1}
-.dcard-date{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim);margin-top:2px}
-.dcard-body{padding:13px}
+.dcard-ic{font-size:20px}
+.dcard-title{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.06em;flex:1}
+.dcard-date{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:2px}
+.dcard-body{padding:14px}
 /* TIMELINE */
-.tl{position:relative;padding-left:16px}
-.tl::before{content:'';position:absolute;left:4px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--accent),var(--border))}
-.tli{position:relative;margin-bottom:14px;animation:fadeUp .3s ease both}
-.tli::before{content:'';position:absolute;left:-13px;top:5px;width:5px;height:5px;background:var(--accent);border-radius:50%;box-shadow:0 0 5px var(--accent)}
-.tli.hl::before{width:7px;height:7px;left:-14px;background:var(--white);box-shadow:0 0 9px var(--white)}
-.tli-time{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--accent);letter-spacing:.04em;line-height:1}
-.tli-lbl{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:var(--white);font-weight:600;letter-spacing:.04em}
-.tli-note{font-family:'Space Mono',monospace;font-size:8.5px;color:var(--off);margin-top:1px;line-height:1.5}
-.tli-sub{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim);margin-top:1px;line-height:1.45}
+.tl{position:relative;padding-left:18px}
+.tl::before{content:'';position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:linear-gradient(to bottom,var(--accent),var(--border))}
+.tli{position:relative;margin-bottom:18px;animation:fadeUp .3s ease both}
+.tli::before{content:'';position:absolute;left:-14px;top:6px;width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 6px var(--accent)}
+.tli.hl::before{width:8px;height:8px;left:-15px;background:var(--white);box-shadow:0 0 10px var(--white)}
+.tli-time{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--accent);letter-spacing:.04em;line-height:1}
+.tli-lbl{font-family:'Barlow Condensed',sans-serif;font-size:17px;color:var(--white);font-weight:600;letter-spacing:.04em}
+.tli-note{font-family:'Space Mono',monospace;font-size:11px;color:var(--off);margin-top:3px;line-height:1.55}
+.tli-sub{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-top:2px;line-height:1.5}
 /* SPOT CARDS */
-.spot{background:rgba(200,184,154,.04);border:1px solid var(--border);padding:10px 12px;margin-bottom:6px;text-decoration:none;display:block;transition:border-color .2s}
+.spot{background:rgba(200,184,154,.04);border:1px solid var(--border);padding:12px 14px;margin-bottom:7px;text-decoration:none;display:block;transition:border-color .2s}
 .spot:hover{border-color:var(--border2)}
-.spot-name{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:600;letter-spacing:.03em;color:var(--white)}
-.spot-chips{display:flex;gap:5px;margin-top:5px;flex-wrap:wrap}
-.spot-chip{font-family:'Space Mono',monospace;font-size:7px;color:var(--dim);background:rgba(200,184,154,.06);border:1px solid var(--border);padding:2px 6px}
-.spot-tip{font-family:'Space Mono',monospace;font-size:8px;color:var(--off);margin-top:6px;line-height:1.5}
+.spot-name{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:600;letter-spacing:.03em;color:var(--white)}
+.spot-chips{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
+.spot-chip{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);background:rgba(200,184,154,.06);border:1px solid var(--border);padding:3px 8px}
+.spot-tip{font-family:'Space Mono',monospace;font-size:10px;color:var(--off);margin-top:7px;line-height:1.55}
 /* DEP SUMMARY */
-.dep-sum{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.2);padding:11px;margin-top:10px}
-.dep-sum-title{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--blue);letter-spacing:.18em;margin-bottom:6px}
-.dep-sum-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05)}
-.dep-sum-k{font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim)}
-.dep-sum-v{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--blue)}
+.dep-sum{background:rgba(96,165,250,.06);border:1px solid rgba(96,165,250,.2);padding:13px;margin-top:12px}
+.dep-sum-title{font-family:'Space Mono',monospace;font-size:10px;color:var(--blue);letter-spacing:.14em;margin-bottom:8px}
+.dep-sum-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.dep-sum-k{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim)}
+.dep-sum-v{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--blue)}
 /* CHECKLIST */
-.stabs{display:flex;gap:2px;margin-bottom:12px;background:var(--black);padding:3px;border:1px solid var(--border)}
-.stab{flex:1;padding:7px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.stabs{display:flex;gap:2px;margin-bottom:14px;background:var(--black);padding:3px;border:1px solid var(--border)}
+.stab{flex:1;padding:9px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s}
 .stab.on{background:var(--accent);color:var(--void)}
-.citem{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
-.cbox{width:14px;height:14px;border:1px solid var(--dim);flex-shrink:0;position:relative;transition:all .2s}
+.citem{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;user-select:none}
+.cbox{width:18px;height:18px;border:1px solid var(--dim);flex-shrink:0;position:relative;transition:all .2s}
 .cbox.on{background:var(--accent);border-color:var(--accent)}
-.cbox.on::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--void);font-size:8px;font-weight:700}
-.clbl{font-size:13px;color:var(--white);flex:1;letter-spacing:.02em;transition:color .2s}
+.cbox.on::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--void);font-size:11px;font-weight:700}
+.clbl{font-size:15px;color:var(--white);flex:1;letter-spacing:.02em;transition:color .2s;line-height:1.4}
 .clbl.done{color:var(--dim);text-decoration:line-through}
-.prog{height:2px;background:var(--black);margin-bottom:12px}
+.prog{height:3px;background:var(--black);margin-bottom:14px}
 .prog-bar{height:100%;background:var(--accent);transition:width .4s}
 /* CHAT */
 .cw{display:flex;flex-direction:column;height:100%;overflow:hidden}
-.ch{padding:11px 16px;border-bottom:1px solid var(--border);background:var(--black);display:flex;align-items:center;gap:8px;flex-shrink:0}
-.sdot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2s infinite;flex-shrink:0}
-.cn{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.14em;color:var(--accent)}
-.cst{font-family:'Space Mono',monospace;font-size:7px;color:var(--green)}
-.ctag{font-family:'Space Mono',monospace;font-size:7px;color:var(--dim);margin-left:auto}
-.cmsgs{flex:1;overflow-y:auto;padding:13px;display:flex;flex-direction:column;gap:9px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
-.msg{max-width:91%;animation:fadeUp .22s ease}
+.ch{padding:12px 16px;border-bottom:1px solid var(--border);background:var(--black);display:flex;align-items:center;gap:9px;flex-shrink:0}
+.sdot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2s infinite;flex-shrink:0}
+.cn{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.14em;color:var(--accent)}
+.cst{font-family:'Space Mono',monospace;font-size:10px;color:var(--green)}
+.ctag{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);margin-left:auto}
+.cmsgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:var(--border) transparent}
+.msg{max-width:92%;animation:fadeUp .22s ease}
 .msg.u{align-self:flex-end}
 .msg.ai{align-self:flex-start}
-.bubble{padding:9px 12px;font-size:12px;line-height:1.6;white-space:pre-wrap}
-.msg.u .bubble{background:var(--accent);color:var(--void);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600}
-.msg.ai .bubble{background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Space Mono',monospace;font-size:10px}
+.bubble{padding:11px 14px;font-size:13px;line-height:1.65;white-space:pre-wrap}
+.msg.u .bubble{background:var(--accent);color:var(--void);font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:600}
+.msg.ai .bubble{background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Space Mono',monospace;font-size:11px}
 .msg.ai .bubble strong{color:var(--accent)}
-.qrow{display:flex;flex-wrap:wrap;gap:4px;padding:7px 13px 4px;border-top:1px solid var(--border);background:var(--black);flex-shrink:0}
-.qp{background:none;border:1px solid var(--border);color:var(--dim);font-family:'Space Mono',monospace;font-size:7px;padding:4px 7px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.qrow{display:flex;flex-wrap:wrap;gap:5px;padding:8px 14px 5px;border-top:1px solid var(--border);background:var(--black);flex-shrink:0}
+.qp{background:none;border:1px solid var(--border);color:var(--dim);font-family:'Space Mono',monospace;font-size:9px;padding:5px 9px;cursor:pointer;transition:all .2s;white-space:nowrap}
 .qp:hover{border-color:var(--accent);color:var(--accent)}
-.cirow{padding:9px 13px;border-top:1px solid var(--border);background:var(--black);display:flex;gap:6px;flex-shrink:0}
-.cinp{flex:1;background:var(--void);border:1px solid var(--border);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:14px;padding:8px 10px;outline:none;transition:border-color .2s}
+.cirow{padding:10px 14px;border-top:1px solid var(--border);background:var(--black);display:flex;gap:7px;flex-shrink:0}
+.cinp{flex:1;background:var(--void);border:1px solid var(--border);color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:16px;padding:10px 12px;outline:none;transition:border-color .2s}
 .cinp:focus{border-color:var(--accent)}
 .cinp::placeholder{color:var(--dim)}
-.csnd{background:var(--accent);border:none;color:var(--void);padding:8px 13px;font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.1em;cursor:pointer}
+.csnd{background:var(--accent);border:none;color:var(--void);padding:10px 15px;font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:.1em;cursor:pointer}
 .csnd:hover{opacity:.8}
 /* NOTES */
-.nta{width:100%;min-height:100px;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Space Mono',monospace;font-size:11px;padding:10px;outline:none;resize:vertical;line-height:1.65}
+.nta{width:100%;min-height:110px;background:var(--black);border:1px solid var(--border);color:var(--white);font-family:'Space Mono',monospace;font-size:12px;padding:12px;outline:none;resize:vertical;line-height:1.7}
 .nta:focus{border-color:var(--accent)}
-.sr{display:flex;gap:8px;padding:8px 0;border-bottom:1px solid var(--border);align-items:flex-start}
-.sr-n{font-family:'Bebas Neue',sans-serif;font-size:16px;color:var(--accent);flex-shrink:0;width:20px;line-height:1}
-.sr-t{font-size:11.5px;color:var(--dim);line-height:1.5}
-.irow{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border)}
-.irowk{font-family:'Space Mono',monospace;font-size:7px;color:var(--dim);width:82px;flex-shrink:0;letter-spacing:.1em;padding-top:1px}
-.irowv{font-size:12px;color:var(--white);line-height:1.5;flex:1}
+.sr{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.sr-n{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--accent);flex-shrink:0;width:24px;line-height:1}
+.sr-t{font-size:13px;color:var(--dim);line-height:1.55}
+.irow{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.irowk{font-family:'Space Mono',monospace;font-size:9px;color:var(--dim);width:72px;flex-shrink:0;letter-spacing:.08em;padding-top:2px;text-transform:uppercase}
+.irowv{font-size:13px;color:var(--white);line-height:1.55;flex:1}
 /* AUTH + SPLASH */
 .ob{position:fixed;inset:0;background:var(--void);z-index:3000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center;animation:fadeUp .5s ease}
-.ob-logo{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:.04em;line-height:.88;margin-bottom:5px}
-.ob-s{color:var(--accent);font-size:44px}
-.ob-sub{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.28em;color:var(--dim);text-transform:uppercase;margin-bottom:28px}
-.ob-enter{width:100%;max-width:240px;background:none;border:1px solid var(--accent);color:var(--accent);font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.24em;padding:12px;cursor:pointer;animation:glow 2.5s infinite}
+.ob-logo{font-family:'Bebas Neue',sans-serif;font-size:60px;letter-spacing:.04em;line-height:.88;margin-bottom:5px}
+.ob-s{color:var(--accent);font-size:50px}
+.ob-sub{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.22em;color:var(--dim);text-transform:uppercase;margin-bottom:28px}
+.ob-enter{width:100%;max-width:260px;background:none;border:1px solid var(--accent);color:var(--accent);font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:.22em;padding:14px;cursor:pointer;animation:glow 2.5s infinite}
 .ob-line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,var(--accent),transparent);margin:14px auto}
-.ob-tag{font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--dim);line-height:1.65;max-width:230px;margin-bottom:26px}
-.ob-foot{font-family:'Space Mono',monospace;font-size:7px;color:var(--dim);letter-spacing:.14em;margin-top:18px}
+.ob-tag{font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--dim);line-height:1.65;max-width:260px;margin-bottom:26px}
+.ob-foot{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.12em;margin-top:18px}
 .auth-wrap{position:fixed;inset:0;background:var(--void);z-index:2000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;animation:fadeUp .4s ease;overflow-y:auto}
-.auth-logo{font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:.04em;line-height:.88;margin-bottom:4px;text-align:center}
-.auth-slash{color:var(--accent);font-size:36px}
-.auth-sub{font-family:'Space Mono',monospace;font-size:7px;letter-spacing:.26em;color:var(--dim);text-transform:uppercase;margin-bottom:22px;text-align:center}
-.auth-card{width:100%;max-width:320px;background:var(--black);border:1px solid var(--border);padding:20px}
-.auth-tabs{display:flex;gap:2px;margin-bottom:14px;background:var(--void);padding:3px;border:1px solid var(--border)}
-.ltab{flex:1;padding:7px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-align:center}
+.auth-logo{font-family:'Bebas Neue',sans-serif;font-size:50px;letter-spacing:.04em;line-height:.88;margin-bottom:4px;text-align:center}
+.auth-slash{color:var(--accent);font-size:42px}
+.auth-sub{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--dim);text-transform:uppercase;margin-bottom:22px;text-align:center}
+.auth-card{width:100%;max-width:340px;background:var(--black);border:1px solid var(--border);padding:22px}
+.auth-tabs{display:flex;gap:2px;margin-bottom:16px;background:var(--void);padding:3px;border:1px solid var(--border)}
+.ltab{flex:1;padding:9px;background:none;border:none;color:var(--dim);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s;text-align:center}
 .ltab.on{background:var(--accent);color:var(--void)}
-.auth-or{display:flex;align-items:center;gap:10px;margin:14px 0;font-family:'Space Mono',monospace;font-size:7.5px;color:var(--dim)}
+.auth-or{display:flex;align-items:center;gap:10px;margin:16px 0;font-family:'Space Mono',monospace;font-size:10px;color:var(--dim)}
 .auth-or::before,.auth-or::after{content:'';flex:1;height:1px;background:var(--border)}
-.auth-err{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.28);padding:8px 10px;font-family:'Space Mono',monospace;font-size:8px;color:var(--red);margin-bottom:10px;line-height:1.5}
-.auth-note{font-family:'Space Mono',monospace;font-size:7px;color:var(--dim);letter-spacing:.1em;margin-top:14px;text-align:center;line-height:1.6}
-.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(200,184,154,.3);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
+.auth-err{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.28);padding:10px 12px;font-family:'Space Mono',monospace;font-size:10px;color:var(--red);margin-bottom:12px;line-height:1.6}
+.auth-note{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.06em;margin-top:14px;text-align:center;line-height:1.7}
+.spin{display:inline-block;width:16px;height:16px;border:2px solid rgba(200,184,154,.3);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite}
 .flicker{animation:flicker 10s infinite}
 /* Google autocomplete dark */
 .pac-container{background:#0c0c0c!important;border:1px solid rgba(200,184,154,.2)!important;box-shadow:0 8px 30px rgba(0,0,0,.95)!important;font-family:'Barlow Condensed',sans-serif!important;margin-top:2px!important}
-.pac-item{background:#0c0c0c!important;color:var(--white)!important;border-top:1px solid rgba(200,184,154,.07)!important;padding:8px 12px!important;font-size:14px!important;cursor:pointer!important}
+.pac-item{background:#0c0c0c!important;color:var(--white)!important;border-top:1px solid rgba(200,184,154,.07)!important;padding:10px 14px!important;font-size:16px!important;cursor:pointer!important}
 .pac-item:hover,.pac-item-selected{background:rgba(200,184,154,.07)!important}
 .pac-item-query{color:var(--accent)!important;font-weight:600!important}
 .pac-icon{display:none!important}
@@ -753,12 +757,7 @@ input,select,textarea,button{font-family:inherit}
 // AUTH SCREEN
 // ─────────────────────────────────────────────────────────────────────────────
 function AuthScreen({onLogin}){
-  const [mode,setMode]=useState("login");
-  const [name,setName]=useState("");
-  const [email,setEmail]=useState("");
-  const [pass,setPass]=useState("");
   const [err,setErr]=useState("");
-  const [loading,setLoading]=useState(false);
   const gRef=useRef(null);
 
   useEffect(()=>{
@@ -768,7 +767,7 @@ function AuthScreen({onLogin}){
         client_id:GOOGLE_CLIENT_ID,
         callback:(response)=>{
           const payload=parseJWT(response.credential);
-          if(!payload){setErr("Google sign-in failed.");return;}
+          if(!payload){setErr("Google sign-in failed — please try again.");return;}
           const u={email:payload.email,name:payload.name||payload.email.split("@")[0],avatar:payload.picture||null,provider:"google"};
           const db=getDB();
           if(!db[u.email]) db[u.email]={concertPlan:null,tripPlan:null,notes:"",checklist:{},msgs:[],createdAt:Date.now()};
@@ -780,28 +779,11 @@ function AuthScreen({onLogin}){
     });
   },[]);
 
-  const submit=()=>{
-    setErr("");setLoading(true);
-    setTimeout(()=>{
-      const db=getDB();
-      if(mode==="register"){
-        if(!name.trim()||!email.trim()||!pass.trim()){setErr("All fields required.");setLoading(false);return;}
-        if(pass.length<5){setErr("Password must be 5+ characters.");setLoading(false);return;}
-        const key=email.toLowerCase().trim();
-        if(db[key]?.pass){setErr("Account exists — sign in instead.");setLoading(false);return;}
-        db[key]={concertPlan:null,tripPlan:null,notes:"",checklist:{},msgs:[],pass,name:name.trim(),createdAt:Date.now()};
-        saveDB(db);
-        const u={email:key,name:name.trim(),provider:"email"};
-        saveSess(u);onLogin(u);
-      } else {
-        const key=email.toLowerCase().trim();
-        const acct=db[key];
-        if(!acct||acct.pass!==pass){setErr("Invalid email or password.");setLoading(false);return;}
-        const u={email:key,name:acct.name||key.split("@")[0],provider:"email"};
-        saveSess(u);onLogin(u);
-      }
-      setLoading(false);
-    },350);
+  const continueAsGuest=()=>{
+    const u={email:"guest@local",name:"Guest",avatar:null,provider:"guest"};
+    const db=getDB();
+    if(!db[u.email]) db[u.email]={concertPlan:null,tripPlan:null,notes:"",checklist:{},msgs:[],createdAt:Date.now()};
+    saveDB(db); saveSess(u); onLogin(u);
   };
 
   return(
@@ -809,18 +791,19 @@ function AuthScreen({onLogin}){
       <div className="auth-logo flicker"><span className="glitch" data-text="YE">YE</span><br/><span className="auth-slash">//</span><br/>DELHI</div>
       <div className="auth-sub">Concert Day Companion · {CONCERT.dateDisplay}</div>
       <div className="auth-card">
-        <div className="auth-tabs">
-          <button className={`ltab${mode==="login"?" on":""}`} onClick={()=>{setMode("login");setErr("")}}>Sign In</button>
-          <button className={`ltab${mode==="register"?" on":""}`} onClick={()=>{setMode("register");setErr("")}}>Create Account</button>
-        </div>
         {err&&<div className="auth-err">{err}</div>}
-        <div ref={gRef} style={{marginBottom:8,display:"flex",justifyContent:"center"}}/>
+        <div style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--dim)",letterSpacing:".12em",textAlign:"center",marginBottom:18,lineHeight:1.6}}>
+          Sign in to save your plan,<br/>checklist & notes across sessions.
+        </div>
+        <div ref={gRef} style={{marginBottom:6,display:"flex",justifyContent:"center"}}/>
         <div className="auth-or">OR</div>
-        {mode==="register"&&<div className="fg"><label className="fl">Your Name</label><input className="fi" placeholder="Arjun Sharma" value={name} onChange={e=>setName(e.target.value)} onKeyDown={e=>e.key==="Enter"&&submit()}/></div>}
-        <div className="fg"><label className="fl">Email</label><input className="fi" type="email" placeholder="you@email.com" value={email} onChange={e=>setEmail(e.target.value)} onKeyDown={e=>e.key==="Enter"&&submit()} autoComplete="email"/></div>
-        <div className="fg" style={{marginBottom:14}}><label className="fl">Password</label><input className="fi" type="password" placeholder={mode==="register"?"min 5 characters":"••••••••"} value={pass} onChange={e=>setPass(e.target.value)} onKeyDown={e=>e.key==="Enter"&&submit()} autoComplete={mode==="register"?"new-password":"current-password"}/></div>
-        <button className="btn" onClick={submit} disabled={loading}>{loading?<div className="spin"/>:mode==="register"?"CREATE ACCOUNT ▶":"SIGN IN ▶"}</button>
-        <div className="auth-note">Your plan, notes & checklist restore every sign-in.<br/>Data stored on this device.</div>
+        <button className="btn ghost" onClick={continueAsGuest} style={{marginBottom:0,letterSpacing:".12em",fontSize:15}}>
+          CONTINUE AS GUEST
+        </button>
+        <div className="auth-note">
+          Guest data is saved on this device only.<br/>
+          Sign in with Google to sync across devices.
+        </div>
       </div>
     </div>
   );
@@ -839,7 +822,7 @@ function HomeScreen({user,cPlan,tPlan,food}){
     <div className="screen">
       <div className="upill">
         <div className="upill-av">{user.avatar?<img src={user.avatar} alt=""/>:user.name[0].toUpperCase()}</div>
-        <div><div className="upill-name">{user.name}</div>{(cPlan||tPlan)&&<div className="upill-saved">✓ PLAN SAVED TO ACCOUNT</div>}</div>
+        <div><div className="upill-name">{user.name}</div>{(cPlan||tPlan)&&<div className="upill-saved">✓ PLAN SAVED</div>}{user.provider==="guest"&&<div style={{fontFamily:"'Space Mono',monospace",fontSize:11,color:"var(--dim)",marginTop:2}}>GUEST MODE</div>}</div>
         {food?.length>0&&<span className="live-dot" style={{marginLeft:"auto"}}>LIVE</span>}
       </div>
 
@@ -864,27 +847,27 @@ function HomeScreen({user,cPlan,tPlan,food}){
       <div className="eic">
         <div className="eic-ey">CONFIRMED — DISTRICT BY ZOMATO</div>
         <div className="eic-name"><span className="glitch" data-text="YE LIVE IN INDIA">YE LIVE IN INDIA</span></div>
-        <div style={{fontFamily:"'Space Mono',monospace",fontSize:8,color:"var(--dim)",marginTop:3}}>{CONCERT.venueFull}</div>
+        <div style={{fontFamily:"'Space Mono',monospace",fontSize:15,color:"var(--dim)",marginTop:3}}>{CONCERT.venueFull}</div>
         <div className="eic-org">{CONCERT.organisers}</div>
         <div className="chips">
-          <div className="chip"><div className="chip-l">DATE</div><div className="chip-v" style={{fontSize:13}}>29 MAR</div></div>
-          <div className="chip"><div className="chip-l">DAY</div><div className="chip-v" style={{fontSize:13}}>SUN</div></div>
+          <div className="chip"><div className="chip-l">DATE</div><div className="chip-v" style={{fontSize:16}}>29 MAR</div></div>
+          <div className="chip"><div className="chip-l">DAY</div><div className="chip-v" style={{fontSize:16}}>SUN</div></div>
           <div className="chip"><div className="chip-l">GATES</div><div className="chip-v">{fmtTime(CONCERT.gatesOpen)}</div></div>
           <div className="chip"><div className="chip-l">SHOW</div><div className="chip-v">{fmtTime(CONCERT.showStart)}</div></div>
-          <div className="chip"><div className="chip-l">END~</div><div className="chip-v" style={{fontSize:13}}>{fmtTime(CONCERT.showEnd)}</div></div>
+          <div className="chip"><div className="chip-l">END~</div><div className="chip-v" style={{fontSize:16}}>{fmtTime(CONCERT.showEnd)}</div></div>
         </div>
       </div>
 
       {cPlan&&(
         <div className="dep-hero">
           <div>
-            <div style={{fontFamily:"'Space Mono',monospace",fontSize:7,color:"var(--dim)",letterSpacing:".22em",marginBottom:3}}>CONCERT DEPART</div>
+            <div style={{fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--dim)",letterSpacing:".22em",marginBottom:3}}>CONCERT DEPART</div>
             <div className="dep-time">{fmtTime(cPlan.deptTime)}</div>
           </div>
           <div className="dep-right">
             <div className="dep-via">via {cPlan.transport}</div>
             <div className="dep-eta">{cPlan.etaMins?`📡 ${cPlan.travel} min (live)`:`~${cPlan.travel} min est.`}</div>
-            {cPlan.hotelPlace&&<div style={{fontFamily:"'Space Mono',monospace",fontSize:7.5,color:"var(--dim)",marginTop:3}}>{cPlan.hotelPlace.name}</div>}
+            {cPlan.hotelPlace&&<div style={{fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--dim)",marginTop:3}}>{cPlan.hotelPlace.name}</div>}
           </div>
         </div>
       )}
@@ -896,24 +879,43 @@ function HomeScreen({user,cPlan,tPlan,food}){
             <div key={i} style={{display:"flex",alignItems:"center",gap:10,padding:"8px 0",borderBottom:"1px solid var(--border)"}}>
               <span style={{fontSize:16}}>{d.type==="concert"?"🎤":"🗺️"}</span>
               <div>
-                <div style={{fontFamily:"'Barlow Condensed',sans-serif",fontSize:14,fontWeight:600}}>{d.label}</div>
-                <div style={{fontFamily:"'Space Mono',monospace",fontSize:8,color:"var(--dim)",marginTop:1}}>{fmtDate(d.date)}</div>
+                <div style={{fontFamily:"'Barlow Condensed',sans-serif",fontSize:17,fontWeight:600}}>{d.label}</div>
+                <div style={{fontFamily:"'Space Mono',monospace",fontSize:15,color:"var(--dim)",marginTop:1}}>{fmtDate(d.date)}</div>
               </div>
-              {d.type==="concert"&&<span style={{marginLeft:"auto",fontFamily:"'Space Mono',monospace",fontSize:7,color:"var(--accent)"}}>SHOW DAY</span>}
+              {d.type==="concert"&&<span style={{marginLeft:"auto",fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--accent)"}}>SHOW DAY</span>}
             </div>
           ))}
           {tPlan.depPoint&&<div className="banner blue" style={{marginTop:8,marginBottom:0}}>🛫 Leaving Delhi: {fmtTime(tPlan.leaveHotelTime)} → {tPlan.depLabel?.split("—")[0]?.trim()}</div>}
         </div>
       )}
 
-      <div style={{marginBottom:12}}>
+      <div style={{marginBottom:14}}>
+        <div className="lbl">VENUE MAP</div>
+        <div className="map-wrap">
+          <iframe
+            title="JLN Stadium"
+            src={`https://www.google.com/maps/embed/v1/place?key=${GOOGLE_API_KEY}&q=Jawaharlal+Nehru+Stadium+New+Delhi&zoom=15`}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${CONCERT.venueLat},${CONCERT.venueLng}&travelmode=transit`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="map-open-btn"
+          >GET DIRECTIONS →</a>
+        </div>
+      </div>
+
+      <div style={{marginBottom:14}}>
         <div className="lbl">NAVIGATION</div>
         {[
           {ic:"🗺️",t:"DIRECTIONS TO VENUE",s:"JLN Stadium — live traffic route",href:`https://www.google.com/maps/dir/?api=1&destination=${CONCERT.venueLat},${CONCERT.venueLng}&travelmode=transit`},
           {ic:"🚇",t:"JLN STADIUM METRO STATION",s:"Violet Line — 5 min walk to venue",href:"https://www.google.com/maps/search/JLN+Stadium+Metro+Station+New+Delhi"},
           {ic:"📱",t:"BUY TICKETS — DISTRICT BY ZOMATO",s:"district.in · Non-refundable · No re-entry",href:CONCERT.ticketUrl},
           {ic:"🍽️",t:"FOOD NEAR VENUE",s:"Live restaurants near JLN Stadium",href:`https://www.google.com/maps/search/restaurant/@${CONCERT.venueLat},${CONCERT.venueLng},15z`},
-          {ic:"🏧",t:"NEARBY ATM",s:"Withdraw cash before entering — ATMs run dry",href:`https://www.google.com/maps/search/atm/@${CONCERT.venueLat},${CONCERT.venueLng},15z`},
+          {ic:"🏧",t:"NEARBY ATM",s:"Withdraw before entering — venue ATMs run dry",href:`https://www.google.com/maps/search/atm/@${CONCERT.venueLat},${CONCERT.venueLng},15z`},
         ].map((b,i)=>(
           <a key={i} href={b.href} target="_blank" rel="noopener noreferrer" className="mlink">
             <span className="ml-ic">{b.ic}</span>
@@ -944,12 +946,12 @@ function HomeScreen({user,cPlan,tPlan,food}){
             <div className="tier-price">{t.price}</div>
           </div>
         ))}
-        <div style={{fontFamily:"'Space Mono',monospace",fontSize:7.5,color:"var(--dim)",marginTop:8,lineHeight:1.6}}>{CONCERT.ticketNote}</div>
+        <div style={{fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--dim)",marginTop:8,lineHeight:1.6}}>{CONCERT.ticketNote}</div>
       </div>
 
       <div>
         <div className="lbl">VENUE RULES</div>
-        {["Gates open 16:00 — arrive early for merch + entry queues","Bags no larger than A4. Mandatory bag check at all gates.",`Prohibited: ${CONCERT.prohibited}`,"NO parking inside venue — Metro, cab or Park+Metro only","NO re-entry after you exit the stadium","Last metro from JLN Stadium station approx. 23:00",`Age limit: ${CONCERT.ageLimit}`,"Share live location with someone before entering"].map((t,i)=>(
+        {["Gates open 17:00 — arrive early for merch + entry queues","Bags no larger than A4. Mandatory bag check at all gates.",`Prohibited: ${CONCERT.prohibited}`,"NO parking inside venue — Metro, cab or Park+Metro only","NO re-entry after you exit the stadium","Last metro from JLN Stadium station approx. 23:00",`Age limit: ${CONCERT.ageLimit}`,"Share live location with someone before entering"].map((t,i)=>(
           <div key={i} className="sr"><span className="sr-n">{String(i+1).padStart(2,"0")}</span><span className="sr-t">{t}</span></div>
         ))}
       </div>
@@ -1165,7 +1167,7 @@ function PlanScreen({cPlan,tPlan,onSave,user}){
                     <div className="dcard-title">{isConcert?"YE LIVE IN INDIA — CONCERT DAY":tmpl?.title||"EXPLORE DELHI"}</div>
                     <div className="dcard-date">{fmtDate(day.date)}{tmpl&&` · ${tmpl.theme}`}</div>
                   </div>
-                  <span style={{color:"var(--accent)",fontFamily:"'Space Mono',monospace",fontSize:12}}>{isOpen?"▲":"▼"}</span>
+                  <span style={{color:"var(--accent)",fontFamily:"'Space Mono',monospace",fontSize:15}}>{isOpen?"▲":"▼"}</span>
                 </div>
 
                 {isOpen&&(
@@ -1205,7 +1207,7 @@ function PlanScreen({cPlan,tPlan,onSave,user}){
 
                         {/* DELHI SPOTS TO EXPLORE */}
                         <div style={{marginTop:14}}>
-                          <div style={{fontFamily:"'Space Mono',monospace",fontSize:8,color:"var(--dim)",letterSpacing:".2em",marginBottom:8,paddingBottom:5,borderBottom:"1px solid var(--border)"}}>HIGHLIGHTS TO EXPLORE</div>
+                          <div style={{fontFamily:"'Space Mono',monospace",fontSize:15,color:"var(--dim)",letterSpacing:".2em",marginBottom:8,paddingBottom:5,borderBottom:"1px solid var(--border)"}}>HIGHLIGHTS TO EXPLORE</div>
                           {Object.entries(DELHI_SPOTS).slice(0,day.dir==="before"?2:2).flatMap(([zone,zd])=>
                             zd.spots.slice(0,2).map((sp,si)=>(
                               <a key={`${zone}-${si}`} href={`https://www.google.com/maps/search/${sp.maps}`} target="_blank" rel="noopener noreferrer" className="spot">
@@ -1238,16 +1240,16 @@ function PlanScreen({cPlan,tPlan,onSave,user}){
               ["Total concert day",       BUDGET[budget]?.total],
             ].map(([k,v],i)=>(
               <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"8px 0",borderBottom:"1px solid var(--border)"}}>
-                <span style={{fontFamily:"'Space Mono',monospace",fontSize:8,color:"var(--dim)",letterSpacing:".08em",textTransform:"uppercase"}}>{k}</span>
+                <span style={{fontFamily:"'Space Mono',monospace",fontSize:15,color:"var(--dim)",letterSpacing:".08em",textTransform:"uppercase"}}>{k}</span>
                 <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:17,color:i===3?"var(--white)":"var(--accent)"}}>{v}</span>
               </div>
             ))}
             <div style={{marginTop:8}}>
-              <div style={{fontFamily:"'Space Mono',monospace",fontSize:7.5,color:"var(--dim)",marginBottom:5}}>EXPLORE SPOTS — {BUDGET[budget]?.label}</div>
+              <div style={{fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--dim)",marginBottom:5}}>EXPLORE SPOTS — {BUDGET[budget]?.label}</div>
               {BUDGET[budget]?.explore.spots.map((s,i)=>(
                 <div key={i} style={{display:"flex",alignItems:"center",gap:8,padding:"6px 0",borderBottom:"1px solid var(--border)"}}>
-                  <span style={{fontSize:14}}>🗺️</span>
-                  <span style={{fontSize:12,color:"var(--white)"}}>{s}</span>
+                  <span style={{fontSize:17}}>🗺️</span>
+                  <span style={{fontSize:15,color:"var(--white)"}}>{s}</span>
                 </div>
               ))}
             </div>
@@ -1321,7 +1323,7 @@ function CopilotScreen({cPlan,tPlan,user,food,onSaveMsgs}){
         {cPlan&&<span className="cst">✓ PLAN</span>}
         {tPlan&&tPlan.days.length>1&&<span className="cst" style={{color:"var(--blue)",marginLeft:4}}>✓ TRIP</span>}
         <span className="ctag">{user.name.split(" ")[0].toUpperCase()}</span>
-        <button onClick={clear} style={{background:"none",border:"none",color:"var(--dim)",fontFamily:"'Space Mono',monospace",fontSize:7,cursor:"pointer",marginLeft:4,letterSpacing:".08em"}}>CLR</button>
+        <button onClick={clear} style={{background:"none",border:"none",color:"var(--dim)",fontFamily:"'Space Mono',monospace",fontSize:17,cursor:"pointer",marginLeft:4,letterSpacing:".08em"}}>CLR</button>
       </div>
       <div className="cmsgs">
         {msgs.map((m,i)=><div key={i} className={`msg ${m.role}`}><div className="bubble">{renderTxt(m.text)}</div></div>)}
@@ -1347,7 +1349,7 @@ function NotesScreen({user,onSave}){
     <div className="screen">
       <div className="lbl">NOTES</div>
       <textarea className="nta" rows={6} placeholder="Gate number · friends' numbers · cab booking ref · hotel address · ticket tier · anything..." value={notes} onChange={e=>save(e.target.value)}/>
-      <div style={{fontFamily:"'Space Mono',monospace",fontSize:7.5,color:"var(--dim)",marginTop:5,marginBottom:18}}>AUTO-SAVED TO YOUR ACCOUNT · {notes.length} CHARS</div>
+      <div style={{fontFamily:"'Space Mono',monospace",fontSize:17,color:"var(--dim)",marginTop:5,marginBottom:18}}>AUTO-SAVED TO YOUR ACCOUNT · {notes.length} CHARS</div>
 
       <div className="lbl">EVENT DETAILS</div>
       {[
@@ -1378,7 +1380,7 @@ function NotesScreen({user,onSave}){
         <div className="lbl">EMERGENCY CONTACTS</div>
         {[["Delhi Police","100"],["Ambulance","108"],["PCR Van","112"],["Delhi Metro","155370"],["Tourist Help","1800111363"]].map(([l,n],i)=>(
           <a key={i} href={`tel:${n}`} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"9px 0",borderBottom:"1px solid var(--border)",textDecoration:"none"}}>
-            <span style={{fontSize:13,color:"var(--white)"}}>{l}</span>
+            <span style={{fontSize:16,color:"var(--white)"}}>{l}</span>
             <span style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:18,color:"var(--accent)"}}>{n}</span>
           </a>
         ))}
@@ -1435,7 +1437,7 @@ export default function App(){
 
   const logout=()=>{
     clearSess();setUser(null);setCPlan(null);setTPlan(null);setFood([]);setTab("home");
-    if(window.google?.accounts?.id) window.google.accounts.id.disableAutoSelect();
+    if(window.google?.accounts?.id) try{window.google.accounts.id.disableAutoSelect();}catch{}
   };
 
   const savePlans=(cp,tp)=>{
@@ -1479,7 +1481,7 @@ export default function App(){
           <div className="hdr-sub">
             <span>29 MAR 2026 · JLN STADIUM</span>
             {food.length>0&&<span className="live-dot">LIVE</span>}
-            <button onClick={logout} style={{marginLeft:"auto",background:"none",border:"none",color:"var(--dim)",fontFamily:"'Space Mono',monospace",fontSize:7,cursor:"pointer",letterSpacing:".1em"}}>SIGN OUT</button>
+            <button onClick={logout} style={{marginLeft:"auto",background:"none",border:"none",color:"var(--dim)",fontFamily:"'Space Mono',monospace",fontSize:17,cursor:"pointer",letterSpacing:".1em"}}>SIGN OUT</button>
           </div>
         </div>
 
