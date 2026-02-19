@@ -575,9 +575,16 @@ input,select,textarea,button{font-family:inherit}
 .banner.green{background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.2);color:var(--green)}
 .banner.blue{background:rgba(96,165,250,.07);border:1px solid rgba(96,165,250,.25);color:var(--blue)}
 /* MAP EMBED */
-.map-wrap{margin-bottom:14px;position:relative;overflow:hidden;border:1px solid var(--border)}
-.map-wrap iframe{display:block;width:100%;height:220px;border:none;filter:grayscale(1) invert(1) contrast(.8)}
-.map-open-btn{position:absolute;bottom:10px;right:10px;background:var(--accent);color:var(--void);font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:.1em;padding:6px 12px;border:none;cursor:pointer;text-decoration:none;display:inline-block}
+/* venue-dir-card */
+.venue-dir-card{display:flex;align-items:center;justify-content:space-between;background:var(--black);border:1px solid var(--border2);padding:16px 18px;margin-bottom:16px;text-decoration:none;transition:border-color .2s;position:relative;overflow:hidden}
+.venue-dir-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);animation:scan 4s infinite}
+.venue-dir-card:hover{border-color:var(--accent)}
+.venue-dir-left{display:flex;align-items:flex-start;gap:14px;flex:1}
+.venue-dir-icon{font-size:26px;flex-shrink:0;margin-top:2px}
+.venue-dir-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em;color:var(--white);line-height:1.1;margin-bottom:4px}
+.venue-dir-addr{font-family:'Space Mono',monospace;font-size:10px;color:var(--dim);line-height:1.55;margin-bottom:5px}
+.venue-dir-meta{font-family:'Space Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:.08em}
+.venue-dir-arrow{font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--accent);letter-spacing:.12em;text-align:center;flex-shrink:0;line-height:1.4;border:1px solid rgba(200,184,154,.25);padding:8px 10px;margin-left:12px}
 /* MAP LINKS */
 .mlink{display:flex;align-items:center;gap:10px;background:var(--black);border:1px solid var(--border);color:var(--white);width:100%;padding:13px 14px;cursor:pointer;text-align:left;transition:border-color .2s;margin-bottom:8px;text-decoration:none}
 .mlink:hover{border-color:var(--border2)}
@@ -949,14 +956,23 @@ function HomeScreen({user,cPlan,tPlan,food,onNav}){
         </div>
       )}
 
-      {/* VENUE MAP */}
-      <div style={{marginBottom:16}}>
-        <div className="lbl">VENUE MAP</div>
-        <div className="map-wrap">
-          <iframe title="JLN Stadium" src={`https://www.google.com/maps/embed/v1/place?key=${GOOGLE_API_KEY}&q=Jawaharlal+Nehru+Stadium+New+Delhi&zoom=15`} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"/>
-          <a href={`https://www.google.com/maps/dir/?api=1&destination=${CONCERT.venueLat},${CONCERT.venueLng}&travelmode=transit`} target="_blank" rel="noopener noreferrer" className="map-open-btn">DIRECTIONS →</a>
+      {/* VENUE DIRECTIONS */}
+      <a
+        href={`https://www.google.com/maps/dir/?api=1&destination=${CONCERT.venueLat},${CONCERT.venueLng}&travelmode=transit`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="venue-dir-card"
+      >
+        <div className="venue-dir-left">
+          <div className="venue-dir-icon">📍</div>
+          <div>
+            <div className="venue-dir-name">Jawaharlal Nehru Stadium</div>
+            <div className="venue-dir-addr">Bhishma Pitamah Marg · Pragati Vihar · New Delhi</div>
+            <div className="venue-dir-meta">🚇 JLN Stadium · Violet Line · 5 min walk</div>
+          </div>
         </div>
-      </div>
+        <div className="venue-dir-arrow">GET<br/>DIRECTIONS<br/>→</div>
+      </a>
 
       {/* QUICK LINKS */}
       <div style={{marginBottom:16}}>
