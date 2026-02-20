@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 // ─── API KEYS ─────────────────────────────────────────────────────────────────
 const GOOGLE_API_KEY   = "AIzaSyAC5Wcs7YMaELnz9nWrmSxfc64-0lxTWl4";
 const GOOGLE_CLIENT_ID = "1037503042769-49ukmiro6nm0fn8jh0ffr9bpi9pbf1ll.apps.googleusercontent.com";
+const GA_ID = "G-81RGRTD3SG";
 
 // ─── CONFIRMED CONCERT DATA ───────────────────────────────────────────────────
 const CONCERT = {
@@ -472,6 +473,30 @@ function loadGIS(){
 }
 const parseJWT=t=>{try{return JSON.parse(atob(t.split(".")[1].replace(/-/g,"+").replace(/_/g,"/")));}catch{return null;}};
 
+// ─── GOOGLE ANALYTICS ─────────────────────────────────────────────────────────
+let _gaLoaded = false;
+function loadGA() {
+  if (_gaLoaded || typeof window === "undefined") return;
+  _gaLoaded = true;
+  // inject gtag.js script
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(s);
+  // init dataLayer
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function(){ window.dataLayer.push(arguments); };
+  window.gtag("js", new Date());
+  window.gtag("config", GA_ID, { send_page_view: false });
+}
+function gaEvent(name, params = {}) {
+  if (typeof window !== "undefined" && window.gtag) {
+    window.gtag("event", name, params);
+  }
+}
+
+
+
 // ─── COUNTDOWN ───────────────────────────────────────────────────────────────
 function useCountdown(){
   const [cd,setCd]=useState({days:0,h:0,m:0,s:0,past:false});
@@ -821,7 +846,7 @@ function AuthScreen({onLogin}){
           const u={email:payload.email,name:payload.name||payload.email.split("@")[0],avatar:payload.picture||null,provider:"google"};
           const db=getDB();
           if(!db[u.email]) db[u.email]={concertPlan:null,tripPlan:null,notes:"",checklist:{},msgs:[],createdAt:Date.now()};
-          saveDB(db); saveSess(u); onLogin(u);
+          saveDB(db); saveSess(u); gaEvent('login', { method: 'google' }); onLogin(u);
         },
         auto_select:false,
       });
@@ -833,7 +858,7 @@ function AuthScreen({onLogin}){
     const u={email:"guest@local",name:"Guest",avatar:null,provider:"guest"};
     const db=getDB();
     if(!db[u.email]) db[u.email]={concertPlan:null,tripPlan:null,notes:"",checklist:{},msgs:[],createdAt:Date.now()};
-    saveDB(db); saveSess(u); onLogin(u);
+    saveDB(db); saveSess(u); gaEvent('login', { method: 'guest' }); onLogin(u);
   };
 
   return(
@@ -1069,6 +1094,7 @@ function PlanScreen({cPlan,tPlan,onSave,user}){
     const newCPlan=buildConcertDay({arrType,arrTime,arrLoc,hotelWake,hotelPlace:hotelPl,transport,budget,etaMins});
     const newTPlan=buildTripPlan({daysOption:daysOpt,arrType,arrTime,arrLoc,hotelWake,hotelPlace:hotelPl,transport,budget,depPoint,depTime,depDate});
     onSave(newCPlan,newTPlan);
+    gaEvent("generate_plan", { days: newTPlan.days.length, transport, budget, days_option: daysOpt });
     setDirty(false);setLoading(false);
     setOpenDay(0);
   };
@@ -1370,6 +1396,7 @@ function CopilotScreen({cPlan,tPlan,user,food,onSaveMsgs}){
     const msg=text||input;if(!msg.trim())return;
     setInput("");
     const next=[...msgs,{role:"u",text:msg}];
+    gaEvent("copilot_query", { query: msg.slice(0,60) });
     setMsgs(next);setTyping(true);
     setTimeout(()=>{
       const reply={role:"ai",text:copilotReply(msg,cPlan,tPlan,food)};
@@ -1588,6 +1615,14 @@ export default function App(){
   const [tPlan,   setTPlan]  = useState(null);
   const [food,    setFood]   = useState([]);
 
+  // GA: load once on first render
+  useEffect(()=>{ loadGA(); },[]);
+
+  // GA: fire page_view whenever tab changes
+  useEffect(()=>{
+    gaEvent("page_view", { page_title: tab, page_location: `/${tab}` });
+  },[tab]);
+
   useEffect(()=>{
     if(!user) return;
     const data=getUserData(user.email);
@@ -1598,7 +1633,10 @@ export default function App(){
     }).catch(()=>{});
   },[user?.email]);
 
-  const login=u=>{saveSess(u);setUser(u);};
+  const login=u=>{
+    saveSess(u);setUser(u);
+    gaEvent("login", { method: u.provider });
+  };
 
   const logout=()=>{
     clearSess();setUser(null);setCPlan(null);setTPlan(null);setFood([]);setTab("home");
