@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 // ─── API KEYS ─────────────────────────────────────────────────────────────────
 const GOOGLE_API_KEY   = "AIzaSyAC5Wcs7YMaELnz9nWrmSxfc64-0lxTWl4";
@@ -1620,6 +1621,7 @@ export default function App(){
       <style>{CSS}</style>
       <div className="grain"/>
       <div className="app"><Splash onDone={()=>{localStorage.setItem("donda_v6_seen","1");setSplash(false);}}/></div>
+      <Analytics />
     </>
   );
 
@@ -1628,6 +1630,7 @@ export default function App(){
       <style>{CSS}</style>
       <div className="grain"/>
       <div className="app"><AuthScreen onLogin={login}/></div>
+    <Analytics />
     </>
   );
 
@@ -1669,6 +1672,7 @@ export default function App(){
           {tab==="about"   &&<AboutScreen/>}
         </div>
       </div>
+    <Analytics />
     </>
   );
 }
