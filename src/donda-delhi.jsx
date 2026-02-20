@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 // ─── API KEYS ─────────────────────────────────────────────────────────────────
-const GOOGLE_API_KEY   = "#";
+const GOOGLE_API_KEY   = "AIzaSyAC5Wcs7YMaELnz9nWrmSxfc64-0lxTWl4";
 const GOOGLE_CLIENT_ID = "1037503042769-49ukmiro6nm0fn8jh0ffr9bpi9pbf1ll.apps.googleusercontent.com";
 
 // ─── CONFIRMED CONCERT DATA ───────────────────────────────────────────────────
